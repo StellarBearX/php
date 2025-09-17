@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 โปรเจคสุดท้าย - แนวทางการแข่งขัน</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .project-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+        }
+        .project-content {
+            padding: 40px;
+        }
+        .criteria-card {
+            background: #f8f9fa;
+            border-left: 5px solid #007bff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .timeline-item {
+            border-left: 3px solid #007bff;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            background: #007bff;
+            border-radius: 50%;
+        }
+        .team-section {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tech-badge {
+            background: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .example-project {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="project-container">
+            <div class="project-header">
+                <h1 class="display-4">🎯 โปรเจคสุดท้าย</h1>
+                <p class="lead">แนวทางการแข่งขัน 10 วันสู่ชัยชนะ</p>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h3><i class="bi bi-person-badge"></i> Frontend Developer</h3>
+                        <p>HTML, CSS, Bootstrap, JavaScript</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h3><i class="bi bi-server"></i> Backend Developer</h3>
+                        <p>PHP, MySQL, API Development</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-info" role="alert">
+                            <h4 class="alert-heading">📋 ข้อมูลโปรเจค</h4>
+                            <p><strong>ชื่อโปรเจค:</strong> E-Commerce Website</p>
+                            <p><strong>ระยะเวลา:</strong> 10 วัน</p>
+                            <p><strong>ทีม:</strong> 2 คน (Frontend + Backend)</p>
+                            <p><strong>เป้าหมาย:</strong> สร้างเว็บไซต์ขายของออนไลน์ที่สมบูรณ์</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="criteria-card">
+                    <h2>🎯 เกณฑ์การแข่งขัน</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>📱 Frontend (50 คะแนน)</h4>
+                            <ul>
+                                <li>Responsive Design (10 คะแนน)</li>
+                                <li>User Experience (10 คะแนน)</li>
+                                <li>Bootstrap Usage (10 คะแนน)</li>
+                                <li>JavaScript Functionality (10 คะแนน)</li>
+                                <li>Code Quality (10 คะแนน)</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>🔧 Backend (50 คะแนน)</h4>
+                            <ul>
+                                <li>API Development (15 คะแนน)</li>
+                                <li>Database Design (10 คะแนน)</li>
+                                <li>Security (10 คะแนน)</li>
+                                <li>Code Quality (10 คะแนน)</li>
+                                <li>Integration (5 คะแนน)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="criteria-card">
+                    <h2>📅 Timeline การทำงาน</h2>
+                    
+                    <div class="timeline-item">
+                        <h4>วันที่ 1-2: Planning & Setup</h4>
+                        <p><strong>Frontend:</strong> วางแผน UI/UX, สร้าง Wireframe</p>
+                        <p><strong>Backend:</strong> ออกแบบ Database, สร้าง API Structure</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Figma/Sketch</span>
+                            <span class="tech-badge">MySQL Workbench</span>
+                            <span class="tech-badge">Postman</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>วันที่ 3-4: Core Development</h4>
+                        <p><strong>Frontend:</strong> สร้าง Layout หลัก, Navigation, Homepage</p>
+                        <p><strong>Backend:</strong> สร้าง Authentication, User Management</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">Bootstrap 5</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>วันที่ 5-6: Product Management</h4>
+                        <p><strong>Frontend:</strong> Product Listing, Product Detail, Search</p>
+                        <p><strong>Backend:</strong> Product CRUD, Category Management</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">REST API</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>วันที่ 7-8: Shopping Cart & Checkout</h4>
+                        <p><strong>Frontend:</strong> Shopping Cart, Checkout Process</p>
+                        <p><strong>Backend:</strong> Order Management, Payment Integration</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Local Storage</span>
+                            <span class="tech-badge">AJAX</span>
+                            <span class="tech-badge">JSON</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>วันที่ 9-10: Testing & Polish</h4>
+                        <p><strong>Frontend:</strong> Testing, Bug Fixes, Performance Optimization</p>
+                        <p><strong>Backend:</strong> Security Testing, API Documentation</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Browser DevTools</span>
+                            <span class="tech-badge">Testing</span>
+                            <span class="tech-badge">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-section">
+                    <h2>👥 การแบ่งงานในทีม</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>🎨 Frontend Developer</h4>
+                            <h5>หน้าที่หลัก:</h5>
+                            <ul>
+                                <li>ออกแบบ UI/UX</li>
+                                <li>สร้าง Responsive Layout</li>
+                                <li>พัฒนา User Interface</li>
+                                <li>เชื่อมต่อกับ Backend API</li>
+                                <li>ทดสอบในหลาย Browser</li>
+                            </ul>
+                            
+                            <h5>ไฟล์ที่ต้องสร้าง:</h5>
+                            <ul>
+                                <li><code>index.html</code> - หน้าแรก</li>
+                                <li><code>products.html</code> - รายการสินค้า</li>
+                                <li><code>product-detail.html</code> - รายละเอียดสินค้า</li>
+                                <li><code>cart.html</code> - ตะกร้าสินค้า</li>
+                                <li><code>checkout.html</code> - ชำระเงิน</li>
+                                <li><code>login.html</code> - เข้าสู่ระบบ</li>
+                                <li><code>register.html</code> - สมัครสมาชิก</li>
+                                <li><code>style.css</code> - Custom CSS</li>
+                                <li><code>script.js</code> - JavaScript Functions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h4>⚙️ Backend Developer</h4>
+                            <h5>หน้าที่หลัก:</h5>
+                            <ul>
+                                <li>ออกแบบ Database</li>
+                                <li>พัฒนา API Endpoints</li>
+                                <li>จัดการ Authentication</li>
+                                <li>ประมวลผลข้อมูล</li>
+                                <li>รักษาความปลอดภัย</li>
+                            </ul>
+                            
+                            <h5>ไฟล์ที่ต้องสร้าง:</h5>
+                            <ul>
+                                <li><code>config.php</code> - การตั้งค่า</li>
+                                <li><code>auth.php</code> - ระบบสมาชิก</li>
+                                <li><code>products.php</code> - จัดการสินค้า</li>
+                                <li><code>orders.php</code> - จัดการคำสั่งซื้อ</li>
+                                <li><code>categories.php</code> - จัดการหมวดหมู่</li>
+                                <li><code>database.sql</code> - โครงสร้างฐานข้อมูล</li>
+                                <li><code>api/index.php</code> - API Router</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="criteria-card">
+                    <h2>🏪 ฟีเจอร์ที่ต้องมี</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>📱 Frontend Features</h4>
+                            <ul>
+                                <li>✅ Responsive Design (Mobile, Tablet, Desktop)</li>
+                                <li>✅ Product Listing with Search & Filter</li>
+                                <li>✅ Product Detail Page</li>
+                                <li>✅ Shopping Cart (Add/Remove/Update)</li>
+                                <li>✅ User Registration & Login</li>
+                                <li>✅ Checkout Process</li>
+                                <li>✅ Order History</li>
+                                <li>✅ Loading States & Error Handling</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>🔧 Backend Features</h4>
+                            <ul>
+                                <li>✅ User Authentication (Register/Login)</li>
+                                <li>✅ Product CRUD Operations</li>
+                                <li>✅ Category Management</li>
+                                <li>✅ Order Processing</li>
+                                <li>✅ Shopping Cart API</li>
+                                <li>✅ Search & Filter API</li>
+                                <li>✅ File Upload (Product Images)</li>
+                                <li>✅ Data Validation & Security</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-project">
+                    <h2>💡 ตัวอย่างโปรเจค</h2>
+                    <h4>E-Commerce Website: "TechStore"</h4>
+                    <p><strong>แนวคิด:</strong> เว็บไซต์ขายอุปกรณ์เทคโนโลยี</p>
+                    
+                    <h5>หมวดหมู่สินค้า:</h5>
+                    <ul>
+                        <li>📱 Smartphones</li>
+                        <li>💻 Laptops</li>
+                        <li>🎧 Accessories</li>
+                        <li>📷 Cameras</li>
+                        <li>🎮 Gaming</li>
+                    </ul>
+                    
+                    <h5>ฟีเจอร์พิเศษ:</h5>
+                    <ul>
+                        <li>🔍 Advanced Search with Filters</li>
+                        <li>⭐ Product Reviews & Ratings</li>
+                        <li>💝 Wishlist</li>
+                        <li>📧 Email Notifications</li>
+                        <li>📊 Admin Dashboard</li>
+                    </ul>
+                </div>
+
+                <div class="criteria-card">
+                    <h2>🏆 เคล็ดลับสู่ชัยชนะ</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>🎨 Frontend Tips</h4>
+                            <ul>
+                                <li>ใช้ Bootstrap Components ให้เต็มที่</li>
+                                <li>ทดสอบในหลายขนาดหน้าจอ</li>
+                                <li>ใส่ Loading States และ Error Messages</li>
+                                <li>ใช้ Icons และ Images ที่เหมาะสม</li>
+                                <li>เขียน Code ที่อ่านง่ายและมี Comments</li>
+                                <li>ใช้ CSS Variables สำหรับสีและขนาด</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>⚙️ Backend Tips</h4>
+                            <ul>
+                                <li>ออกแบบ Database ให้เป็น Normalized</li>
+                                <li>ใช้ Prepared Statements ป้องกัน SQL Injection</li>
+                                <li>Validate ข้อมูลทั้ง Frontend และ Backend</li>
+                                <li>ใช้ Password Hashing</li>
+                                <li>สร้าง API Documentation</li>
+                                <li>ทดสอบ API ด้วย Postman</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="criteria-card">
+                    <h2>📊 การนำเสนอผลงาน</h2>
+                    <h4>สิ่งที่ต้องเตรียม:</h4>
+                    <ul>
+                        <li>🎥 Demo การใช้งานเว็บไซต์ (5-10 นาที)</li>
+                        <li>📋 อธิบายฟีเจอร์หลัก</li>
+                        <li>💻 แสดง Code ที่สำคัญ</li>
+                        <li>🗄️ อธิบาย Database Structure</li>
+                        <li>🔧 แสดง API Endpoints</li>
+                        <li>📱 แสดง Responsive Design</li>
+                    </ul>
+                    
+                    <h4>คำถามที่อาจถูกถาม:</h4>
+                    <ul>
+                        <li>ทำไมถึงเลือกใช้ Technology นี้?</li>
+                        <li>มีปัญหาอะไรบ้างและแก้ไขอย่างไร?</li>
+                        <li>จะพัฒนาต่ออย่างไรในอนาคต?</li>
+                        <li>มีฟีเจอร์อะไรที่อยากเพิ่ม?</li>
+                    </ul>
+                </div>
+
+                <div class="team-section">
+                    <h2>🚀 เริ่มต้นโปรเจค</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Frontend Developer</h4>
+                            <ol>
+                                <li>สร้าง Wireframe ด้วย Figma หรือกระดาษ</li>
+                                <li>เลือก Color Scheme และ Typography</li>
+                                <li>สร้าง HTML Structure</li>
+                                <li>ใช้ Bootstrap สำหรับ Layout</li>
+                                <li>เพิ่ม Custom CSS</li>
+                                <li>เขียน JavaScript Functions</li>
+                            </ol>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Backend Developer</h4>
+                            <ol>
+                                <li>ออกแบบ Database Schema</li>
+                                <li>สร้าง Tables ใน MySQL</li>
+                                <li>เขียน PHP Functions</li>
+                                <li>สร้าง API Endpoints</li>
+                                <li>ทดสอบ API ด้วย Postman</li>
+                                <li>เขียน Documentation</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <h2>🎯 เป้าหมายสุดท้าย</h2>
+                    <p class="lead">สร้างเว็บไซต์ E-Commerce ที่สมบูรณ์ ใช้งานได้จริง และพร้อมแข่งขัน</p>
+                    <div class="tech-stack justify-content-center">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">Bootstrap 5</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">PHP</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">REST API</span>
+                        <span class="tech-badge">Responsive Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 โปรเจคฝึกฝน HTML, CSS, Bootstrap & PHP</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts - Noto Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans Thai', sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            margin: 0;
+            color: #2c3e50;
+        }
+        .hero-section {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .main-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin: -30px auto 30px;
+            position: relative;
+            z-index: 10;
+        }
+        .nav-card {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .nav-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            border-color: #dee2e6;
+        }
+        .nav-header {
+            padding: 24px;
+            color: white;
+            text-align: center;
+        }
+        .nav-body {
+            padding: 24px;
+        }
+        .frontend-bg { background: #495057; }
+        .backend-bg { background: #6c757d; }
+        .docs-bg { background: #868e96; }
+        .project-bg { background: #495057; }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .feature-list i {
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+        .btn-custom {
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 8px;
+            font-weight: 500;
+        }
+        .btn-frontend {
+            background: #495057;
+            color: white;
+            border: none;
+        }
+        .btn-backend {
+            background: #6c757d;
+            color: white;
+            border: none;
+        }
+        .btn-custom:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            color: white;
+        }
+        .stats-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #495057;
+        }
+        .timeline-section {
+            padding: 50px 0;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #495057;
+            border-radius: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 16px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background: #e9ecef;
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="display-3 mb-4">🎓 โปรเจคฝึกฝน</h1>
+            <h2 class="display-5 mb-4">HTML, CSS, Bootstrap & PHP</h2>
+            <p class="lead mb-5">โปรเจคฝึกฝน 10 วันสู่การแข่งขัน สำหรับทีม Frontend & Backend Developer</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <span class="badge bg-light text-dark fs-6 px-3 py-2">HTML5</span>
+                        <span class="badge bg-light text-dark fs-6 px-3 py-2">CSS3</span>
+                        <span class="badge bg-light text-dark fs-6 px-3 py-2">Bootstrap 5</span>
+                        <span class="badge bg-light text-dark fs-6 px-3 py-2">JavaScript</span>
+                        <span class="badge bg-light text-dark fs-6 px-3 py-2">PHP</span>
+                        <span class="badge bg-light text-dark fs-6 px-3 py-2">MySQL</span>
+                        <span class="badge bg-light text-dark fs-6 px-3 py-2">REST API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-container">
+            <div class="p-5">
+                <!-- Navigation Cards -->
+                <div class="row">
+                    <!-- Frontend Section -->
+                    <div class="col-lg-6">
+                        <div class="card nav-card">
+                            <div class="nav-header frontend-bg">
+                                <i class="bi bi-person-badge display-4 mb-3"></i>
+                                <h3>Frontend Developer</h3>
+                                <p class="mb-0">HTML, CSS, Bootstrap, JavaScript</p>
+                            </div>
+                            <div class="nav-body">
+                                <h5 class="mb-3">🎯 เป้าหมายการเรียนรู้:</h5>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle text-success"></i> HTML Structure & Semantics</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> CSS Styling & Layout</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> Bootstrap Framework</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> JavaScript & API Integration</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> Responsive Design</li>
+                                </ul>
+                                <div class="text-center mt-4">
+                                    <a href="frontend/index.html" class="btn btn-frontend btn-custom">
+                                        <i class="bi bi-play-circle"></i> เริ่มเรียน Frontend
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend Section -->
+                    <div class="col-lg-6">
+                        <div class="card nav-card">
+                            <div class="nav-header backend-bg">
+                                <i class="bi bi-server display-4 mb-3"></i>
+                                <h3>Backend Developer</h3>
+                                <p class="mb-0">PHP, MySQL, API Development</p>
+                            </div>
+                            <div class="nav-body">
+                                <h5 class="mb-3">🎯 เป้าหมายการเรียนรู้:</h5>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle text-success"></i> PHP Development</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> MySQL Database</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> API Development</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> Security & Authentication</li>
+                                    <li><i class="bi bi-check-circle text-success"></i> Data Validation</li>
+                                </ul>
+                                <div class="text-center mt-4">
+                                    <a href="backend/php/config.php" class="btn btn-backend btn-custom">
+                                        <i class="bi bi-code-slash"></i> เริ่มเรียน Backend
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentation & Project Section -->
+                <div class="row mt-4">
+                    <div class="col-lg-6">
+                        <div class="card nav-card">
+                            <div class="nav-header docs-bg">
+                                <i class="bi bi-book display-4 mb-3"></i>
+                                <h3>เอกสารประกอบ</h3>
+                                <p class="mb-0">คู่มือและเอกสารสำคัญ</p>
+                            </div>
+                            <div class="nav-body">
+                                <ul class="feature-list">
+                                    <li>
+                                        <a href="README.md" target="_blank" class="text-decoration-none">
+                                            <i class="bi bi-file-text text-warning"></i>
+                                            คู่มือโปรเจค
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="shared/docs/installation-guide.md" target="_blank" class="text-decoration-none">
+                                            <i class="bi bi-gear text-warning"></i>
+                                            คู่มือติดตั้ง
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="SUMMARY.md" target="_blank" class="text-decoration-none">
+                                            <i class="bi bi-list-ul text-warning"></i>
+                                            สรุปโปรเจค
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card nav-card">
+                            <div class="nav-header project-bg">
+                                <i class="bi bi-trophy display-4 mb-3"></i>
+                                <h3>โปรเจคสุดท้าย</h3>
+                                <p class="mb-0">E-Commerce Website</p>
+                            </div>
+                            <div class="nav-body">
+                                <p>สร้างเว็บไซต์ขายของออนไลน์ที่สมบูรณ์สำหรับการแข่งขัน</p>
+                                <div class="text-center mt-4">
+                                    <a href="frontend/final-project/project-guidelines.html" class="btn btn-custom" style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white;">
+                                        <i class="bi bi-trophy"></i> ดูแนวทางการแข่งขัน
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="stats-section">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="stat-item">
+                                <div class="stat-number">8</div>
+                                <div>บทเรียน Frontend</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-item">
+                                <div class="stat-number">10</div>
+                                <div>วันฝึกฝน</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-item">
+                                <div class="stat-number">2</div>
+                                <div>ทีม Developer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-item">
+                                <div class="stat-number">1</div>
+                                <div>โปรเจคสุดท้าย</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="timeline-section">
+                    <h3 class="text-center mb-5">📅 Timeline การเรียน</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="timeline-item">
+                                <h5>วันที่ 1-2: HTML พื้นฐาน</h5>
+                                <p>เรียนรู้โครงสร้าง HTML, Tags, Forms และ Tables</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>วันที่ 3-4: CSS พื้นฐาน</h5>
+                                <p>เรียนรู้ Selectors, Layout, Animations และ Responsive Design</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>วันที่ 5-6: Bootstrap Framework</h5>
+                                <p>เรียนรู้ Grid System, Components และ Advanced Features</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="timeline-item">
+                                <h5>วันที่ 7-8: Advanced Topics</h5>
+                                <p>เรียนรู้ CSS Variables, Custom Components และ Advanced Animations</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>วันที่ 9-10: Integration</h5>
+                                <p>เรียนรู้การเชื่อมต่อ Frontend กับ Backend API</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>โปรเจคสุดท้าย</h5>
+                                <p>สร้าง E-Commerce Website ที่สมบูรณ์สำหรับการแข่งขัน</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-5">
+                    <h3>🚀 พร้อมเริ่มต้นแล้วหรือยัง?</h3>
+                    <p class="lead">เลือกบทเรียนที่เหมาะสมกับบทบาทของคุณ</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="frontend/index.html" class="btn btn-primary btn-lg">
+                            <i class="bi bi-person-badge"></i> เริ่มเรียน Frontend
+                        </a>
+                        <a href="backend/php/config.php" class="btn btn-danger btn-lg">
+                            <i class="bi bi-server"></i> เริ่มเรียน Backend
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">🎓 โปรเจคฝึกฝน HTML, CSS, Bootstrap & PHP - สร้างด้วย ❤️ สำหรับการแข่งขัน</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // เพิ่มเอฟเฟกต์ hover สำหรับ cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.nav-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // เพิ่ม animation สำหรับ stats
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const finalNumber = parseInt(target.textContent);
+                        animateNumber(target, 0, finalNumber, 1000);
+                    }
+                });
+            });
+
+            statNumbers.forEach(stat => {
+                observer.observe(stat);
+            });
+        });
+
+        // ฟังก์ชัน animate ตัวเลข
+        function animateNumber(element, start, end, duration) {
+            const startTime = performance.now();
+            
+            function updateNumber(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const current = Math.floor(start + (end - start) * progress);
+                element.textContent = current;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateNumber);
+                }
+            }
+            
+            requestAnimationFrame(updateNumber);
+        }
+    </script>
+</body>
+</html>
