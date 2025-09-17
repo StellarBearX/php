@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บทเรียนที่ 3: CSS พื้นฐาน</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .lesson-section {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+        }
+        .code-example {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        .exercise {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            border-left: 5px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .demo-box {
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .color-demo {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .color-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .selector-demo {
+            background: #e74c3c;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .selector-demo.class-demo {
+            background: #f39c12;
+        }
+        #id-demo {
+            background: #9b59b6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 บทเรียนที่ 3: CSS พื้นฐาน</h1>
+        
+        <div class="lesson-section">
+            <h2>🎯 เป้าหมายการเรียนรู้</h2>
+            <ul>
+                <li>เข้าใจ CSS Selectors</li>
+                <li>รู้จัก Properties และ Values</li>
+                <li>ใช้ Colors และ Typography</li>
+                <li>เข้าใจ Box Model</li>
+            </ul>
+        </div>
+
+        <div class="lesson-section">
+            <h2>🎨 CSS คืออะไร?</h2>
+            <p>CSS (Cascading Style Sheets) ใช้สำหรับจัดแต่งหน้าตาของเว็บไซต์</p>
+            
+            <h3>วิธีการเชื่อมต่อ CSS:</h3>
+            <div class="code-example">
+&lt;!-- วิธีที่ 1: External CSS (แนะนำ) --&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+
+&lt;!-- วิธีที่ 2: Internal CSS --&gt;
+&lt;style&gt;
+    body { background-color: lightblue; }
+&lt;/style&gt;
+
+&lt;!-- วิธีที่ 3: Inline CSS --&gt;
+&lt;p style="color: red;"&gt;ข้อความสีแดง&lt;/p&gt;
+            </div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>🎯 CSS Selectors</h2>
+            <p>Selectors ใช้เลือก element ที่ต้องการจัดแต่ง</p>
+            
+            <h3>1. Element Selector</h3>
+            <div class="code-example">
+/* เลือกทุก p tag */
+p {
+    color: blue;
+    font-size: 16px;
+}
+            </div>
+
+            <h3>2. Class Selector</h3>
+            <div class="code-example">
+/* เลือก element ที่มี class="highlight" */
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+            </div>
+
+            <h3>3. ID Selector</h3>
+            <div class="code-example">
+/* เลือก element ที่มี id="header" */
+#header {
+    background-color: #333;
+    color: white;
+}
+            </div>
+
+            <h3>ตัวอย่าง Selectors:</h3>
+            <div class="selector-demo">Element Selector (div)</div>
+            <div class="selector-demo class-demo">Class Selector (.class-demo)</div>
+            <div class="selector-demo" id="id-demo">ID Selector (#id-demo)</div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>🌈 Colors</h2>
+            <p>CSS รองรับหลายวิธีในการกำหนดสี</p>
+            
+            <div class="code-example">
+/* วิธีกำหนดสี */
+color: red;                    /* ชื่อสี */
+color: #ff0000;               /* Hex */
+color: rgb(255, 0, 0);        /* RGB */
+color: rgba(255, 0, 0, 0.5);  /* RGBA (มีความโปร่งใส) */
+color: hsl(0, 100%, 50%);     /* HSL */
+            </div>
+
+            <h3>ตัวอย่างสี:</h3>
+            <div class="color-demo">
+                <div class="color-box" style="background-color: red;">Red</div>
+                <div class="color-box" style="background-color: #00ff00;">Green</div>
+                <div class="color-box" style="background-color: rgb(0, 0, 255);">Blue</div>
+                <div class="color-box" style="background-color: rgba(255, 0, 0, 0.5);">Alpha</div>
+            </div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📝 Typography</h2>
+            <p>การจัดแต่งตัวอักษรและข้อความ</p>
+            
+            <div class="code-example">
+/* Typography Properties */
+font-family: Arial, sans-serif;  /* ฟอนต์ */
+font-size: 18px;                 /* ขนาด */
+font-weight: bold;               /* ความหนา */
+font-style: italic;              /* เอียง */
+text-align: center;              /* จัดตำแหน่ง */
+text-decoration: underline;      /* ขีดเส้นใต้ */
+line-height: 1.5;                /* ระยะห่างบรรทัด */
+letter-spacing: 2px;             /* ระยะห่างตัวอักษร */
+            </div>
+
+            <h3>ตัวอย่าง Typography:</h3>
+            <div style="font-family: 'Times New Roman', serif; font-size: 20px; font-weight: bold; text-align: center; text-decoration: underline; line-height: 1.8; letter-spacing: 1px;">
+                ตัวอย่างข้อความที่จัดแต่งแล้ว
+            </div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📦 Box Model</h2>
+            <p>ทุก element ใน HTML เป็นกล่องที่มี 4 ส่วน</p>
+            
+            <div class="code-example">
+.box {
+    width: 200px;           /* ความกว้าง */
+    height: 100px;          /* ความสูง */
+    padding: 20px;          /* ระยะห่างภายใน */
+    border: 2px solid red;  /* เส้นขอบ */
+    margin: 10px;           /* ระยะห่างภายนอก */
+    background-color: lightblue;
+}
+            </div>
+
+            <h3>ตัวอย่าง Box Model:</h3>
+            <div style="width: 200px; height: 100px; padding: 20px; border: 2px solid red; margin: 10px; background-color: lightblue; text-align: center; line-height: 60px;">
+                Content
+            </div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>🎨 Background</h2>
+            <div class="code-example">
+/* Background Properties */
+background-color: #f0f0f0;           /* สีพื้นหลัง */
+background-image: url('image.jpg');  /* รูปพื้นหลัง */
+background-repeat: no-repeat;        /* ไม่ทำซ้ำ */
+background-position: center;         /* ตำแหน่ง */
+background-size: cover;              /* ขนาด */
+            </div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📏 Units (หน่วย)</h2>
+            <div class="code-example">
+/* หน่วยต่างๆ */
+width: 100px;        /* pixels */
+width: 50%;          /* percentage */
+width: 10em;         /* relative to font size */
+width: 5rem;         /* relative to root font size */
+width: 100vw;        /* viewport width */
+width: 50vh;         /* viewport height */
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h2>🎯 แบบฝึกหัด</h2>
+            <p><strong>สร้างไฟล์ CSS สำหรับหน้าเว็บ:</strong></p>
+            <ol>
+                <li>สร้างไฟล์ <code>style.css</code></li>
+                <li>จัดแต่งหน้าเว็บที่สร้างในบทเรียนที่ 1-2</li>
+                <li>ใช้ CSS Properties ต่อไปนี้:</li>
+                <ul>
+                    <li>เปลี่ยนสีพื้นหลังและข้อความ</li>
+                    <li>จัดแต่ง Typography (ฟอนต์, ขนาด, สี)</li>
+                    <li>ใช้ Box Model (padding, margin, border)</li>
+                    <li>ใช้ Class และ ID selectors</li>
+                    <li>เพิ่มรูปพื้นหลัง</li>
+                </ul>
+            </ol>
+        </div>
+
+        <div class="lesson-section">
+            <h2>💡 เคล็ดลับ</h2>
+            <ul>
+                <li>ใช้ External CSS เพื่อแยกโค้ด</li>
+                <li>ใช้ Class สำหรับ style ที่ใช้ซ้ำ</li>
+                <li>ใช้ ID สำหรับ element เดียว</li>
+                <li>ทดสอบในเบราว์เซอร์หลายตัว</li>
+                <li>ใช้ Developer Tools ในการ debug</li>
+            </ul>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📁 ไฟล์ที่ต้องสร้าง</h2>
+            <p>สร้างไฟล์ <code>style.css</code> และปรับปรุงไฟล์ HTML ที่มีอยู่</p>
+        </div>
+    </div>
+</body>
+</html>

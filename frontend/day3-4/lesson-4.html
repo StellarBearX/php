@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บทเรียนที่ 4: CSS Layout และ Advanced</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .lesson-section {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #e74c3c;
+        }
+        .code-example {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        .exercise {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            border-left: 5px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        /* Layout Demo Styles */
+        .layout-demo {
+            border: 2px solid #3498db;
+            margin: 10px 0;
+            padding: 10px;
+            background: #ecf0f1;
+        }
+        
+        /* Display Demo */
+        .display-demo {
+            background: #e74c3c;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+        }
+        .inline-demo {
+            display: inline;
+            background: #f39c12;
+        }
+        .block-demo {
+            display: block;
+            background: #9b59b6;
+        }
+        .inline-block-demo {
+            display: inline-block;
+            background: #1abc9c;
+            width: 100px;
+        }
+        
+        /* Position Demo */
+        .position-container {
+            position: relative;
+            height: 200px;
+            background: #ecf0f1;
+            border: 2px solid #34495e;
+            margin: 20px 0;
+        }
+        .position-demo {
+            width: 50px;
+            height: 50px;
+            background: #e74c3c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .static-demo { position: static; }
+        .relative-demo { position: relative; top: 20px; left: 20px; }
+        .absolute-demo { position: absolute; top: 10px; right: 10px; }
+        .fixed-demo { position: fixed; bottom: 20px; right: 20px; }
+        
+        /* Float Demo */
+        .float-demo {
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+        .float-left { float: left; width: 30%; }
+        .float-right { float: right; width: 30%; }
+        .clear-demo { clear: both; background: #2ecc71; }
+        
+        /* Flexbox Demo */
+        .flex-container {
+            display: flex;
+            background: #34495e;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .flex-item {
+            background: #e74c3c;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+            flex: 1;
+        }
+        
+        /* Grid Demo */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            background: #2c3e50;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .grid-item {
+            background: #f39c12;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        /* Animation Demo */
+        .animation-demo {
+            width: 100px;
+            height: 100px;
+            background: #e74c3c;
+            margin: 20px auto;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        /* Hover Effect */
+        .hover-demo {
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .hover-demo:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 บทเรียนที่ 4: CSS Layout และ Advanced</h1>
+        
+        <div class="lesson-section">
+            <h2>🎯 เป้าหมายการเรียนรู้</h2>
+            <ul>
+                <li>เข้าใจ Display Properties</li>
+                <li>ใช้ Position และ Float</li>
+                <li>เรียนรู้ Flexbox และ Grid</li>
+                <li>สร้าง Animations และ Transitions</li>
+            </ul>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📐 Display Properties</h2>
+            <p>Display กำหนดวิธีการแสดงผลของ element</p>
+            
+            <div class="code-example">
+/* Display Values */
+display: block;        /* แสดงเป็นบล็อก (ขึ้นบรรทัดใหม่) */
+display: inline;       /* แสดงในบรรทัดเดียวกัน */
+display: inline-block; /* ผสม inline และ block */
+display: none;         /* ซ่อน element */
+display: flex;         /* Flexbox Layout */
+display: grid;         /* Grid Layout */
+            </div>
+
+            <h3>ตัวอย่าง Display:</h3>
+            <div class="layout-demo">
+                <span class="display-demo inline-demo">Inline</span>
+                <span class="display-demo inline-demo">Inline</span>
+                <div class="display-demo block-demo">Block</div>
+                <div class="display-demo block-demo">Block</div>
+                <div class="display-demo inline-block-demo">Inline-Block</div>
+                <div class="display-demo inline-block-demo">Inline-Block</div>
+            </div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📍 Position</h2>
+            <p>Position กำหนดตำแหน่งของ element</p>
+            
+            <div class="code-example">
+/* Position Values */
+position: static;    /* ตำแหน่งปกติ (default) */
+position: relative;  /* ตำแหน่งสัมพันธ์กับตำแหน่งเดิม */
+position: absolute;  /* ตำแหน่งสัมพันธ์กับ parent */
+position: fixed;     /* ตำแหน่งคงที่บนหน้าจอ */
+position: sticky;    /* ติดขอบเมื่อเลื่อน */
+            </div>
+
+            <h3>ตัวอย่าง Position:</h3>
+            <div class="position-container">
+                <div class="position-demo static-demo">Static</div>
+                <div class="position-demo relative-demo">Relative</div>
+                <div class="position-demo absolute-demo">Absolute</div>
+            </div>
+            <div class="position-demo fixed-demo">Fixed</div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>🌊 Float</h2>
+            <p>Float ใช้สำหรับจัด layout แบบดั้งเดิม</p>
+            
+            <div class="code-example">
+/* Float Values */
+float: left;    /* ลอยไปทางซ้าย */
+float: right;   /* ลอยไปทางขวา */
+float: none;    /* ไม่ลอย (default) */
+clear: both;    /* ล้าง float */
+            </div>
+
+            <h3>ตัวอย่าง Float:</h3>
+            <div class="layout-demo">
+                <div class="float-demo float-left">Float Left</div>
+                <div class="float-demo float-right">Float Right</div>
+                <div class="clear-demo float-demo">Clear Both</div>
+            </div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>🎯 Flexbox</h2>
+            <p>Flexbox เป็นวิธีใหม่ในการจัด layout</p>
+            
+            <div class="code-example">
+/* Flexbox Container */
+.flex-container {
+    display: flex;
+    flex-direction: row;        /* row, column */
+    justify-content: center;    /* จัดแนวนอน */
+    align-items: center;        /* จัดแนวตั้ง */
+    flex-wrap: wrap;           /* ขึ้นบรรทัดใหม่ */
+}
+
+/* Flexbox Items */
+.flex-item {
+    flex: 1;                   /* ขยายเต็มพื้นที่ */
+    flex-grow: 1;              /* ขยาย */
+    flex-shrink: 1;            /* หด */
+    flex-basis: 100px;         /* ขนาดเริ่มต้น */
+}
+            </div>
+
+            <h3>ตัวอย่าง Flexbox:</h3>
+            <div class="flex-container">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+            </div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📊 CSS Grid</h2>
+            <p>Grid เป็นระบบ layout ที่ทรงพลัง</p>
+            
+            <div class="code-example">
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* 3 คอลัมน์ */
+    grid-template-rows: auto auto;       /* 2 แถว */
+    gap: 10px;                           /* ระยะห่าง */
+    grid-template-areas: 
+        "header header header"
+        "sidebar main main";
+}
+
+/* Grid Items */
+.grid-item {
+    grid-column: 1 / 3;        /* เริ่มคอลัมน์ 1 ถึง 3 */
+    grid-row: 1;               /* แถวที่ 1 */
+    grid-area: header;         /* ใช้ชื่อ area */
+}
+            </div>
+
+            <h3>ตัวอย่าง Grid:</h3>
+            <div class="grid-container">
+                <div class="grid-item">Header</div>
+                <div class="grid-item">Sidebar</div>
+                <div class="grid-item">Main</div>
+                <div class="grid-item">Footer</div>
+            </div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>🎬 Animations และ Transitions</h2>
+            <p>ทำให้เว็บไซต์มีชีวิตชีวา</p>
+            
+            <div class="code-example">
+/* Transition */
+.element {
+    transition: all 0.3s ease;
+}
+
+.element:hover {
+    transform: scale(1.1);
+    background-color: red;
+}
+
+/* Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+            </div>
+
+            <h3>ตัวอย่าง Animation:</h3>
+            <div class="animation-demo"></div>
+            
+            <h3>ตัวอย่าง Hover Effect:</h3>
+            <div class="hover-demo">Hover Me!</div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📱 Responsive Design</h2>
+            <p>ทำให้เว็บไซต์ใช้งานได้ทุกขนาดหน้าจอ</p>
+            
+            <div class="code-example">
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .flex-container {
+        flex-direction: column;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile First */
+.mobile-first {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .mobile-first {
+        width: 50%;
+    }
+}
+            </div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>🎨 Advanced Selectors</h2>
+            <div class="code-example">
+/* Advanced Selectors */
+/* Child Selector */
+.parent > .child { }
+
+/* Descendant Selector */
+.ancestor .descendant { }
+
+/* Adjacent Sibling */
+.element + .next-element { }
+
+/* General Sibling */
+.element ~ .sibling { }
+
+/* Attribute Selector */
+input[type="text"] { }
+a[href^="https"] { }  /* เริ่มด้วย https */
+a[href$=".pdf"] { }   /* จบด้วย .pdf */
+
+/* Pseudo-classes */
+a:hover { }
+input:focus { }
+li:first-child { }
+li:last-child { }
+li:nth-child(2n) { }  /* ทุก 2 ตัว */
+
+/* Pseudo-elements */
+p::before { content: "→ "; }
+p::after { content: " ←"; }
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h2>🎯 แบบฝึกหัด</h2>
+            <p><strong>สร้าง Layout เว็บไซต์:</strong></p>
+            <ol>
+                <li>สร้างหน้าเว็บที่มี Layout ดังนี้:</li>
+                <ul>
+                    <li>Header (ความสูง 80px)</li>
+                    <li>Navigation Bar (ใช้ Flexbox)</li>
+                    <li>Main Content (2 คอลัมน์: Sidebar + Content)</li>
+                    <li>Footer</li>
+                </ul>
+                <li>ใช้ CSS Grid หรือ Flexbox</li>
+                <li>เพิ่ม Hover Effects</li>
+                <li>ทำให้ Responsive (ใช้ Media Queries)</li>
+                <li>เพิ่ม Animations เล็กน้อย</li>
+            </ol>
+        </div>
+
+        <div class="lesson-section">
+            <h2>💡 เคล็ดลับ</h2>
+            <ul>
+                <li>ใช้ Flexbox สำหรับ 1 มิติ (แถวหรือคอลัมน์)</li>
+                <li>ใช้ Grid สำหรับ 2 มิติ (แถวและคอลัมน์)</li>
+                <li>เริ่มด้วย Mobile First Design</li>
+                <li>ใช้ CSS Variables สำหรับค่าที่ใช้ซ้ำ</li>
+                <li>ทดสอบในหลายขนาดหน้าจอ</li>
+            </ul>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📁 ไฟล์ที่ต้องสร้าง</h2>
+            <p>สร้างไฟล์ <code>layout-demo.html</code> และ <code>advanced.css</code></p>
+        </div>
+    </div>
+</body>
+</html>

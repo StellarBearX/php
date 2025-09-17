@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บทเรียนที่ 2: HTML Forms และ Tables</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        .lesson-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+        .code-example {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .exercise {
+            background: #e8f5e8;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .form-demo {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 บทเรียนที่ 2: HTML Forms และ Tables</h1>
+        
+        <div class="lesson-section">
+            <h2>🎯 เป้าหมายการเรียนรู้</h2>
+            <ul>
+                <li>สร้างฟอร์มรับข้อมูล</li>
+                <li>สร้างตารางแสดงข้อมูล</li>
+                <li>เข้าใจ Input Types ต่างๆ</li>
+            </ul>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📝 HTML Forms</h2>
+            <p>ฟอร์มใช้สำหรับรับข้อมูลจากผู้ใช้</p>
+            
+            <h3>โครงสร้างฟอร์มพื้นฐาน:</h3>
+            <div class="code-example">
+&lt;form action="process.php" method="POST"&gt;
+    &lt;!-- ฟิลด์ต่างๆ --&gt;
+&lt;/form&gt;
+            </div>
+
+            <h3>Input Types ต่างๆ:</h3>
+            <div class="code-example">
+&lt;!-- ข้อความ --&gt;
+&lt;input type="text" name="username" placeholder="ชื่อผู้ใช้"&gt;
+
+&lt;!-- รหัสผ่าน --&gt;
+&lt;input type="password" name="password" placeholder="รหัสผ่าน"&gt;
+
+&lt;!-- อีเมล --&gt;
+&lt;input type="email" name="email" placeholder="อีเมล"&gt;
+
+&lt;!-- ตัวเลข --&gt;
+&lt;input type="number" name="age" min="1" max="100"&gt;
+
+&lt;!-- วันที่ --&gt;
+&lt;input type="date" name="birthday"&gt;
+
+&lt;!-- ไฟล์ --&gt;
+&lt;input type="file" name="photo"&gt;
+
+&lt;!-- Checkbox --&gt;
+&lt;input type="checkbox" name="hobby" value="reading"&gt; อ่านหนังสือ
+
+&lt;!-- Radio Button --&gt;
+&lt;input type="radio" name="gender" value="male"&gt; ชาย
+&lt;input type="radio" name="gender" value="female"&gt; หญิง
+            </div>
+
+            <h3>Textarea และ Select:</h3>
+            <div class="code-example">
+&lt;!-- กล่องข้อความยาว --&gt;
+&lt;textarea name="message" rows="4" cols="50"&gt;ข้อความเริ่มต้น&lt;/textarea&gt;
+
+&lt;!-- Dropdown --&gt;
+&lt;select name="country"&gt;
+    &lt;option value="th"&gt;ประเทศไทย&lt;/option&gt;
+    &lt;option value="us"&gt;สหรัฐอเมริกา&lt;/option&gt;
+    &lt;option value="jp"&gt;ญี่ปุ่น&lt;/option&gt;
+&lt;/select&gt;
+            </div>
+
+            <h3>ปุ่ม:</h3>
+            <div class="code-example">
+&lt;button type="submit"&gt;ส่งข้อมูล&lt;/button&gt;
+&lt;button type="reset"&gt;รีเซ็ต&lt;/button&gt;
+&lt;button type="button"&gt;ปุ่มธรรมดา&lt;/button&gt;
+            </div>
+        </div>
+
+        <div class="form-demo">
+            <h3>📋 ตัวอย่างฟอร์ม:</h3>
+            <form>
+                <p>
+                    <label>ชื่อ:</label><br>
+                    <input type="text" name="name" placeholder="กรอกชื่อ">
+                </p>
+                <p>
+                    <label>อีเมล:</label><br>
+                    <input type="email" name="email" placeholder="กรอกอีเมล">
+                </p>
+                <p>
+                    <label>เพศ:</label><br>
+                    <input type="radio" name="gender" value="male"> ชาย
+                    <input type="radio" name="gender" value="female"> หญิง
+                </p>
+                <p>
+                    <label>งานอดิเรก:</label><br>
+                    <input type="checkbox" name="hobby" value="reading"> อ่านหนังสือ
+                    <input type="checkbox" name="hobby" value="music"> ฟังเพลง
+                    <input type="checkbox" name="hobby" value="sports"> เล่นกีฬา
+                </p>
+                <p>
+                    <label>ข้อความ:</label><br>
+                    <textarea name="message" rows="3" cols="40"></textarea>
+                </p>
+                <button type="submit">ส่งข้อมูล</button>
+            </form>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📊 HTML Tables</h2>
+            <p>ตารางใช้สำหรับแสดงข้อมูลในรูปแบบแถวและคอลัมน์</p>
+            
+            <h3>โครงสร้างตาราง:</h3>
+            <div class="code-example">
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;หัวข้อคอลัมน์ 1&lt;/th&gt;
+            &lt;th&gt;หัวข้อคอลัมน์ 2&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;ข้อมูลแถว 1 คอลัมน์ 1&lt;/td&gt;
+            &lt;td&gt;ข้อมูลแถว 1 คอลัมน์ 2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;ข้อมูลแถว 2 คอลัมน์ 1&lt;/td&gt;
+            &lt;td&gt;ข้อมูลแถว 2 คอลัมน์ 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+            </div>
+
+            <h3>ตัวอย่างตาราง:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ชื่อ</th>
+                        <th>อายุ</th>
+                        <th>อาชีพ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>สมชาย</td>
+                        <td>25</td>
+                        <td>โปรแกรมเมอร์</td>
+                    </tr>
+                    <tr>
+                        <td>สมหญิง</td>
+                        <td>30</td>
+                        <td>ครู</td>
+                    </tr>
+                    <tr>
+                        <td>สมศักดิ์</td>
+                        <td>35</td>
+                        <td>หมอ</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="lesson-section">
+            <h2>🏷️ Semantic HTML</h2>
+            <p>ใช้ Tags ที่มีความหมายเพื่อให้โค้ดอ่านง่ายขึ้น</p>
+            
+            <div class="code-example">
+&lt;header&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;หน้าแรก&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;เกี่ยวกับ&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h1&gt;หัวข้อบทความ&lt;/h1&gt;
+        &lt;p&gt;เนื้อหาบทความ&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;© 2024 เว็บไซต์ของฉัน&lt;/p&gt;
+&lt;/footer&gt;
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h2>🎯 แบบฝึกหัด</h2>
+            <p><strong>สร้างหน้าเว็บ "แบบฟอร์มสมัครสมาชิก":</strong></p>
+            <ol>
+                <li>สร้างฟอร์มสมัครสมาชิกที่มีฟิลด์:</li>
+                <ul>
+                    <li>ชื่อ-นามสกุล (text)</li>
+                    <li>อีเมล (email)</li>
+                    <li>รหัสผ่าน (password)</li>
+                    <li>ยืนยันรหัสผ่าน (password)</li>
+                    <li>วันเกิด (date)</li>
+                    <li>เพศ (radio buttons)</li>
+                    <li>งานอดิเรก (checkboxes)</li>
+                    <li>จังหวัด (select dropdown)</li>
+                    <li>ที่อยู่ (textarea)</li>
+                </ul>
+                <li>สร้างตารางแสดงข้อมูลสมาชิกตัวอย่าง 5 คน</li>
+                <li>ใช้ semantic HTML tags</li>
+            </ol>
+        </div>
+
+        <div class="lesson-section">
+            <h2>💡 เคล็ดลับ</h2>
+            <ul>
+                <li>ใช้ <code>label</code> เพื่อเชื่อมโยงกับ input</li>
+                <li>ใช้ <code>placeholder</code> เพื่อแสดงคำแนะนำ</li>
+                <li>ใช้ <code>required</code> เพื่อบังคับกรอกข้อมูล</li>
+                <li>ใช้ <code>colspan</code> และ <code>rowspan</code> สำหรับตาราง</li>
+            </ul>
+        </div>
+
+        <div class="lesson-section">
+            <h2>📁 ไฟล์ที่ต้องสร้าง</h2>
+            <p>สร้างไฟล์ <code>registration-form.html</code> ตามแบบฝึกหัดข้างต้น</p>
+        </div>
+    </div>
+</body>
+</html>

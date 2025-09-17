@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บทเรียนที่ 6: Bootstrap Advanced Components</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+        }
+        .lesson-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .lesson-header {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+        }
+        .lesson-content {
+            padding: 30px;
+        }
+        .code-example {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        .demo-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #e74c3c;
+        }
+        .exercise {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .navbar-demo {
+            background: #343a40 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <h1 class="display-4">🚀 บทเรียนที่ 6: Bootstrap Advanced Components</h1>
+                <p class="lead">เรียนรู้ Components ขั้นสูงของ Bootstrap</p>
+            </div>
+            
+            <div class="lesson-content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-warning" role="alert">
+                            <h4 class="alert-heading">🎯 เป้าหมายการเรียนรู้</h4>
+                            <ul class="mb-0">
+                                <li>ใช้ Navigation Components</li>
+                                <li>สร้าง Modals และ Dropdowns</li>
+                                <li>ใช้ Carousel และ Accordion</li>
+                                <li>สร้าง Responsive Navigation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-section">
+                    <h2>🧭 Navigation</h2>
+                    
+                    <h3>Navbar (Navigation Bar):</h3>
+                    <div class="code-example">
+&lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+    &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Brand&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+            &lt;ul class="navbar-nav ms-auto"&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link active" href="#"&gt;Home&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#"&gt;Contact&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+                    </div>
+
+                    <h3>ตัวอย่าง Navbar:</h3>
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-demo">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#"><i class="bi bi-house-door"></i> MyWebsite</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#"><i class="bi bi-house"></i> หน้าแรก</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"><i class="bi bi-person"></i> เกี่ยวกับ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"><i class="bi bi-envelope"></i> ติดต่อ</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                            <i class="bi bi-gear"></i> เมนู
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">ตั้งค่า</a></li>
+                                            <li><a class="dropdown-item" href="#">ช่วยเหลือ</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="demo-section">
+                    <h2>📋 Alerts</h2>
+                    
+                    <div class="code-example">
+&lt;div class="alert alert-primary" role="alert"&gt;Primary alert&lt;/div&gt;
+&lt;div class="alert alert-success" role="alert"&gt;Success alert&lt;/div&gt;
+&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
+    Warning alert with close button
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert"&gt;&lt;/button&gt;
+&lt;/div&gt;
+                    </div>
+
+                    <h3>ตัวอย่าง Alerts:</h3>
+                    <div class="alert alert-primary" role="alert">
+                        <i class="bi bi-info-circle"></i> ข้อมูลทั่วไป
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        <i class="bi bi-check-circle"></i> สำเร็จแล้ว!
+                    </div>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <i class="bi bi-exclamation-triangle"></i> คำเตือน! สามารถปิดได้
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                        <i class="bi bi-x-circle"></i> เกิดข้อผิดพลาด!
+                    </div>
+                </div>
+
+                <div class="demo-section">
+                    <h2>📊 Progress Bars</h2>
+                    
+                    <div class="code-example">
+&lt;div class="progress"&gt;
+    &lt;div class="progress-bar" role="progressbar" style="width: 25%"&gt;25%&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress"&gt;
+    &lt;div class="progress-bar bg-success" role="progressbar" style="width: 50%"&gt;50%&lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+
+                    <h3>ตัวอย่าง Progress Bars:</h3>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 25%">25%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%">50%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%">75%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%">100%</div>
+                    </div>
+                </div>
+
+                <div class="demo-section">
+                    <h2>🎭 Modals</h2>
+                    
+                    <div class="code-example">
+&lt;!-- Modal Trigger Button --&gt;
+&lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"&gt;
+    Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="exampleModal" tabindex="-1"&gt;
+    &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;h5 class="modal-title"&gt;Modal title&lt;/h5&gt;
+                &lt;button type="button" class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                Modal body text goes here.
+            &lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+                &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Close&lt;/button&gt;
+                &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+
+                    <h3>ตัวอย่าง Modal:</h3>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="bi bi-box-arrow-up-right"></i> เปิด Modal
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><i class="bi bi-info-circle"></i> ข้อมูลเพิ่มเติม</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>นี่คือเนื้อหาของ Modal ที่สามารถแสดงข้อมูลเพิ่มเติมได้</p>
+                                    <div class="alert alert-info">
+                                        <i class="bi bi-lightbulb"></i> เคล็ดลับ: Modal ใช้สำหรับแสดงข้อมูลหรือฟอร์มในหน้าต่างแยก
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                                    <button type="button" class="btn btn-primary">บันทึก</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-section">
+                    <h2>🎠 Carousel</h2>
+                    
+                    <div class="code-example">
+&lt;div id="carouselExample" class="carousel slide"&gt;
+    &lt;div class="carousel-indicators"&gt;
+        &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+        &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-inner"&gt;
+        &lt;div class="carousel-item active"&gt;
+            &lt;img src="..." class="d-block w-100" alt="..."&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel-item"&gt;
+            &lt;img src="..." class="d-block w-100" alt="..."&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"&gt;
+        &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"&gt;
+        &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+                    </div>
+
+                    <h3>ตัวอย่าง Carousel:</h3>
+                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="bg-primary text-white p-5 text-center" style="height: 200px;">
+                                    <h3>สไลด์ที่ 1</h3>
+                                    <p>เนื้อหาของสไลด์แรก</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="bg-success text-white p-5 text-center" style="height: 200px;">
+                                    <h3>สไลด์ที่ 2</h3>
+                                    <p>เนื้อหาของสไลด์ที่สอง</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="bg-warning text-dark p-5 text-center" style="height: 200px;">
+                                    <h3>สไลด์ที่ 3</h3>
+                                    <p>เนื้อหาของสไลด์ที่สาม</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="demo-section">
+                    <h2>📋 Accordion</h2>
+                    
+                    <div class="code-example">
+&lt;div class="accordion" id="accordionExample"&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;h2 class="accordion-header"&gt;
+            &lt;button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"&gt;
+                Accordion Item #1
+            &lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"&gt;
+            &lt;div class="accordion-body"&gt;
+                Content for accordion item #1
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+
+                    <h3>ตัวอย่าง Accordion:</h3>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    <i class="bi bi-question-circle"></i> คำถามที่ 1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>คำตอบ:</strong> นี่คือคำตอบสำหรับคำถามที่ 1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    <i class="bi bi-question-circle"></i> คำถามที่ 2
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>คำตอบ:</strong> นี่คือคำตอบสำหรับคำถามที่ 2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    <i class="bi bi-question-circle"></i> คำถามที่ 3
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>คำตอบ:</strong> นี่คือคำตอบสำหรับคำถามที่ 3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-section">
+                    <h2>🎨 Utilities</h2>
+                    
+                    <h3>Spacing:</h3>
+                    <div class="code-example">
+&lt;div class="m-3 p-3"&gt;Margin และ Padding&lt;/div&gt;
+&lt;div class="mt-2 mb-4"&gt;Margin Top และ Bottom&lt;/div&gt;
+&lt;div class="px-3 py-2"&gt;Padding X และ Y&lt;/div&gt;
+                    </div>
+
+                    <h3>Text Utilities:</h3>
+                    <div class="code-example">
+&lt;p class="text-start"&gt;Text start&lt;/p&gt;
+&lt;p class="text-center"&gt;Text center&lt;/p&gt;
+&lt;p class="text-end"&gt;Text end&lt;/p&gt;
+&lt;p class="text-uppercase"&gt;Uppercase text&lt;/p&gt;
+&lt;p class="text-lowercase"&gt;LOWERCASE TEXT&lt;/p&gt;
+                    </div>
+
+                    <h3>ตัวอย่าง Utilities:</h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 m-2 text-center">
+                                <p class="text-primary">Primary Text</p>
+                                <p class="text-success">Success Text</p>
+                                <p class="text-warning">Warning Text</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 m-2">
+                                <p class="text-start">Text Start</p>
+                                <p class="text-center">Text Center</p>
+                                <p class="text-end">Text End</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 m-2">
+                                <p class="text-uppercase">uppercase text</p>
+                                <p class="text-lowercase">LOWERCASE TEXT</p>
+                                <p class="text-capitalize">capitalize text</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎯 แบบฝึกหัด</h2>
+                    <p><strong>สร้างเว็บไซต์สมบูรณ์ด้วย Bootstrap:</strong></p>
+                    <ol>
+                        <li>สร้างหน้าเว็บ "บริษัทเทคโนโลยี"</li>
+                        <li>ใช้ Components ต่อไปนี้:</li>
+                        <ul>
+                            <li>Responsive Navbar พร้อม Dropdown</li>
+                            <li>Hero Section พร้อม Carousel</li>
+                            <li>Cards แสดงบริการ</li>
+                            <li>Accordion FAQ</li>
+                            <li>Contact Form ใน Modal</li>
+                            <li>Progress Bars แสดงทักษะ</li>
+                            <li>Alerts แสดงข้อความสำคัญ</li>
+                        </ul>
+                        <li>ใช้ Bootstrap Icons</li>
+                        <li>ทำให้ Responsive ทุกขนาดหน้าจอ</li>
+                        <li>ใช้ Utilities Classes</li>
+                    </ol>
+                </div>
+
+                <div class="demo-section">
+                    <h2>💡 เคล็ดลับ</h2>
+                    <ul>
+                        <li>ใช้ Bootstrap Icons แทนการหาไอคอนจากที่อื่น</li>
+                        <li>ใช้ Utilities Classes เพื่อปรับแต่งเล็กน้อย</li>
+                        <li>ทดสอบ JavaScript Components ในเบราว์เซอร์</li>
+                        <li>ใช้ Bootstrap Documentation เป็นอ้างอิง</li>
+                        <li>Customize Bootstrap ด้วย CSS Variables</li>
+                    </ul>
+                </div>
+
+                <div class="demo-section">
+                    <h2>📁 ไฟล์ที่ต้องสร้าง</h2>
+                    <p>สร้างไฟล์ <code>company-website.html</code> ตามแบบฝึกหัดข้างต้น</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
